@@ -7,6 +7,6 @@ class Custom extends \Magento\Backend\Block\Template
     {
         $parent = $this->getParentBlock();
         $order = $parent->getOrder();
-        return 'Hello world:' . $order->getSageOrderId();
+        return $order->getSageOrderId();
     }
 }

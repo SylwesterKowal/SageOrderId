@@ -9,24 +9,24 @@ POST http://<host>/rest/default/V1/integration/admin/token
 
 Headers
 
-Content-Type application/json
+Content-Type: application/json
+Authorization: Bearer <token>
 
 
 Payload
 {
-"username": "admin",
-"password": "123123q"
+"username": "<admin username>",
+"password": "<admin password>"
 }
 
 
 
 #Set SageOrderId
 
-POST http://<host>/rest/V1/sage/<order id>
 PUT http://<host>/rest/V1/sage/<order id>
 
 BODY:
-{ "entity":{"sage_order_id":1111111}}
+{ "entity":{"sage_order_id":"<Sage Order ID>"}}
 
 
 #Set Template
