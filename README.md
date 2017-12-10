@@ -23,6 +23,8 @@ Payload
 #Set SageOrderId
 
 POST http://<host>/rest/V1/sage/<order id>
+PUT http://<host>/rest/V1/sage/<order id>
 
+BODY:
 { "entity":{"sage_order_id":1111111}}
 
