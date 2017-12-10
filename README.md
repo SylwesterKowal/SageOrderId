@@ -19,3 +19,10 @@ Payload
 }
 
 
+
+#Set SageOrderId
+
+POST http://<host>/rest/V1/sage/<order id>
+
+{ "entity":{"sage_order_id":1111111}}
+
