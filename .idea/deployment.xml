@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData">
+  <component name="PublishConfigData" serverName="Vitcas EN OVH DEV">
     <serverData>
       <paths name="21m.bh">
         <serverdata>
@@ -152,7 +152,7 @@
       <paths name="Vitcas EN OVH DEV">
         <serverdata>
           <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/public_html/vendor/wm21w/sage" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
