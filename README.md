@@ -28,3 +28,8 @@ PUT http://<host>/rest/V1/sage/<order id>
 BODY:
 { "entity":{"sage_order_id":1111111}}
 
+
+#Set Template
+
+copy file from: /vendor/magento/module-sales/view/adminhtml/templates/order/view/info.phtml
+to: app/design/adminhtml/Magento/blank/Magento_Sales/templates/order/view/info.phtml
