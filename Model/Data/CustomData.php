@@ -43,6 +43,11 @@ class CustomData extends \Magento\Framework\Api\AbstractExtensibleObject impleme
         return $this->_get(self::CUSTOMER_ID);
     }
 
+    public function getSageOrderId()
+    {
+        return $this->_get(self::SAGE_ORDER_ID);
+    }
+
     /**
      * Set Customer Id.
      *
@@ -52,6 +57,11 @@ class CustomData extends \Magento\Framework\Api\AbstractExtensibleObject impleme
     public function setCustomerId($customerId = null)
     {
         return $this->setData(self::CUSTOMER_ID, $customerId);
+    }
+
+    public function setSageOrderId($sageOrderId = null)
+    {
+        return $this->setData(self::SAGE_ORDER_ID, $sageOrderId);
     }
 
     /**

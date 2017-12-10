@@ -45,7 +45,7 @@ class CustomRepository implements CustomRepositoryInterface
             throw new InputException(__("Invalid ID provided", $id));
         } else {
             $order = $this->_objectManager->create('\Magento\Sales\Model\Order')->load($id);
-            $sageOrderID = $data->getSageId();
+            $sageOrderID = $data->getSageOrderId();
             $order->setData('sage_order_id', $sageOrderID);
             $order->save();
         }

@@ -14,8 +14,9 @@ interface CustomDataInterface extends \Magento\Framework\Api\CustomAttributesDat
     const ID = 'id';
 
     const CUSTOMER_ID = 'customer_id';
-
     const PRODUCT_ID = 'product_id';
+
+    const SAGE_ORDER_ID = 'sage_order_id';
     /**#@-*/
 
     /**
@@ -39,6 +40,7 @@ interface CustomDataInterface extends \Magento\Framework\Api\CustomAttributesDat
      * @return int|null
      */
     public function getCustomerId();
+    public function getSageOrderId();
 
     /**
      * Set Customer Id.
@@ -47,6 +49,7 @@ interface CustomDataInterface extends \Magento\Framework\Api\CustomAttributesDat
      * @return $this
      */
     public function setCustomerId($customerId = null);
+    public function setSageOrderId($customerId = null);
 
     /**
      * Get Product Id.
