@@ -1,5 +1,5 @@
 {
-    "name": "sylwester-kowal/sage",
+    "name": "wm21w/sage",
     "description": "Wm21w Sage",
     "require": {
       "php": "~5.5.0|~5.6.0",
