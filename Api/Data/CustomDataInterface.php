@@ -1,6 +1,6 @@
 <?php
 
-namespace CodeTheatres\CustomApi\Api\Data;
+namespace Wm21w\Sage\Api\Data;
 
 /**
  * Custom Data interface.
