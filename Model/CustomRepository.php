@@ -24,28 +24,16 @@ class CustomRepository implements CustomRepositoryInterface
 
     public function create(CustomDataInterface $data)
     {
-        $id = (int)$data->getId();
-
-        if (!$this->_objectManager->create('Magento\Sales\Model\Order')->load($id)->getData()) {
-            throw new InputException(__("Invalid ID provided", $id));
-        } else {
-            $order = $this->_objectManager->create('\Magento\Sales\Model\Order')->load($id);
-            $sageOrderID = $data->getSageId();
-            $order->setData('sage_order_id', $sageOrderID);
-            $order->save();
-        }
-
-        return $data;
     }
 
     public function update(CustomDataInterface $data)
     {
         $id = (int)$data->getId();
 
-        if (!$this->_objectManager->create('Magento\Sales\Model\Order')->load($id)->getData()) {
+        if (!$this->_objectManager->create('Magento\Sales\Model\Order')->loadByIncrementId($id)->getData()) {
             throw new InputException(__("Invalid ID provided", $id));
         } else {
-            $order = $this->_objectManager->create('\Magento\Sales\Model\Order')->load($id);
+            $order = $this->_objectManager->create('\Magento\Sales\Model\Order')->loadByIncrementId($id);
             $sageOrderID = $data->getSageOrderId();
             $order->setData('sage_order_id', $sageOrderID);
             $order->save();
@@ -56,10 +44,10 @@ class CustomRepository implements CustomRepositoryInterface
 
     public function get($id)
     {
-        if (!$this->_objectManager->create('Magento\Sales\Model\Order')->load($id)->getData()) {
+        if (!$this->_objectManager->create('Magento\Sales\Model\Order')->loadByIncrementId($id)->getData()) {
             throw new InputException(__("Invalid ID provided", $id));
         } else {
-            $order = $this->_objectManager->create('\Magento\Sales\Model\Order')->load($id);
+            $order = $this->_objectManager->create('\Magento\Sales\Model\Order')->loadByIncrementId($id);
             $sageOrderID = $order->getSageOrderId();
         }
         $result = array();
