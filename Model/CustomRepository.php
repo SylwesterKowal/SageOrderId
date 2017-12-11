@@ -24,7 +24,7 @@ class CustomRepository implements CustomRepositoryInterface
 
     public function create(CustomDataInterface $data)
     {
-        $id = $data->getId();
+        $id = (int)$data->getId();
 
         if (!$this->_objectManager->create('Magento\Sales\Model\Order')->load($id)->getData()) {
             throw new InputException(__("Invalid ID provided", $id));
@@ -40,7 +40,7 @@ class CustomRepository implements CustomRepositoryInterface
 
     public function update(CustomDataInterface $data)
     {
-        $id = $data->getId();
+        $id = (int)$data->getId();
 
         if (!$this->_objectManager->create('Magento\Sales\Model\Order')->load($id)->getData()) {
             throw new InputException(__("Invalid ID provided", $id));
@@ -51,7 +51,6 @@ class CustomRepository implements CustomRepositoryInterface
             $order->save();
         }
 
-        $data = ['id' => $id, 'sage_order_id' => $sageOrderID, $order->getData()];
         return $data;
     }
 

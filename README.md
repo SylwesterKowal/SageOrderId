@@ -33,3 +33,8 @@ BODY:
 
 copy file from: /vendor/magento/module-sales/view/adminhtml/templates/order/view/info.phtml
 to: app/design/adminhtml/Magento/blank/Magento_Sales/templates/order/view/info.phtml
+
+
+#Get SageOrderId
+
+GET http://<host>/rest/V1/sage/<order id>
