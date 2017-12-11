@@ -34,6 +34,7 @@ class CustomRepository implements CustomRepositoryInterface
             $order->setData('sage_order_id', $sageOrderID);
             $order->save();
         }
+
         return $data;
     }
 
@@ -49,6 +50,8 @@ class CustomRepository implements CustomRepositoryInterface
             $order->setData('sage_order_id', $sageOrderID);
             $order->save();
         }
+
+        $data = ['id' => $id, 'sage_order_id' => $sageOrderID, $order->getData()];
         return $data;
     }
 
