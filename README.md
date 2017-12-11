@@ -5,36 +5,30 @@ Assign Sage OrderID with Magento 2 OrderID
 
 Endpoint
 
-POST http://<host>/rest/default/V1/integration/admin/token
+POST http://{{host}}/rest/default/V1/integration/admin/token
 
 Headers
 
 Content-Type: application/json
-Authorization: Bearer <token>
+Authorization: Bearer {{token}}
 
 
 Payload
 {
-"username": "<admin username>",
-"password": "<admin password>"
+"username": "{{admin username}}",
+"password": "{{admin password}}"
 }
 
 
 
 #Set SageOrderId
 
-PUT http://<host>/rest/V1/sage/<order id>
+PUT http://{{host}}/rest/V1/sage/{{order IncrementId}}
 
 BODY:
-{ "entity":{"sage_order_id":"<Sage Order ID>"}}
-
-
-#Set Template
-
-copy file from: /vendor/magento/module-sales/view/adminhtml/templates/order/view/info.phtml
-to: app/design/adminhtml/Magento/blank/Magento_Sales/templates/order/view/info.phtml
+{ "entity":{"sage_order_id":"Sage Order ID ex: 10203004304"}}
 
 
 #Get SageOrderId
 
-GET http://<host>/rest/V1/sage/<order id>
+GET http://{{host}}/rest/V1/sage/{{order IncrementId}}
