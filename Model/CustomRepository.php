@@ -28,7 +28,7 @@ class CustomRepository implements CustomRepositoryInterface
 
     public function update(CustomDataInterface $data)
     {
-        $id = (int)$data->getId();
+        $id = trim($data->getId());
 
         if (!$this->_objectManager->create('Magento\Sales\Model\Order')->loadByIncrementId($id)->getData()) {
             throw new InputException(__("Invalid ID provided", $id));
